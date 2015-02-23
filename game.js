@@ -50,6 +50,9 @@ window.onload = initAll;
 function initAll(){
     canvas = document.getElementById('stage1');
     context = canvas.getContext('2d');
+    context.rect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = 'black';
+    context.fill();
     if(!context) {
         // No 2d context available, let the user know
         alert('Please upgrade your browser');
@@ -81,6 +84,7 @@ function getFile(){
 function drawBoard() {
     img.onload = function() {
         canvas.width = 415;
+        canvas.height = 415;
         context.rect(0, 0, canvas.width, canvas.height);
         context.fillStyle = 'black';
         context.fill();
